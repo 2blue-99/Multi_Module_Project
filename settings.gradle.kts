@@ -1,4 +1,7 @@
 pluginManagement {
+
+    includeBuild("build-logic")
+
     repositories {
         google {
             content {
@@ -18,8 +21,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 
-    enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 }
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "Multi_Module_Practice"
 include(":app")
