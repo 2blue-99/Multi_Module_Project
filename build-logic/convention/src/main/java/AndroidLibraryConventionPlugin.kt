@@ -1,6 +1,6 @@
 import com.android.build.gradle.LibraryExtension
 import com.example.convention.configureKotlinAndroid
-import com.example.convention.libs
+import com.example.convention.library
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -20,10 +20,10 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                "testImplementation"(libs.findLibrary("junit.junit").get())
-                "androidTestImplementation"(libs.findLibrary("junit").get())
-                "androidTestImplementation"(libs.findLibrary("androidx.test.espresso.core").get())
-                "implementation"(libs.findLibrary("orhanobut.logger").get())
+                "testImplementation"(library("junit.junit"))
+                "androidTestImplementation"(library("junit"))
+                "androidTestImplementation"(library("androidx.test.espresso.core"))
+                "implementation"(library("orhanobut.logger"))
             }
         }
     }

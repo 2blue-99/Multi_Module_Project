@@ -1,4 +1,4 @@
-import com.example.convention.libs
+import com.example.convention.library
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -11,10 +11,10 @@ class AndroidHiltConventionPlugin: Plugin<Project> {
                 apply("org.jetbrains.kotlin.kapt")
             }
             dependencies {
-                "implementation"(libs.findLibrary("hilt.android").get())
-                "kapt"(libs.findLibrary("hilt.compiler").get())
-                "kaptAndroidTest"(libs.findLibrary("hilt.compiler").get())
-                "kaptTest"(libs.findLibrary("hilt.compiler").get())
+                "implementation"(library("hilt.android"))
+                "kapt"(library("hilt.compiler"))
+                "kaptAndroidTest"(library("hilt.compiler"))
+                "kaptTest"(library("hilt.compiler"))
             }
         }
 

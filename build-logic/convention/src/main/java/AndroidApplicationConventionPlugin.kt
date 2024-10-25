@@ -1,6 +1,7 @@
 import com.android.build.api.dsl.ApplicationExtension
 import com.example.convention.configureKotlinAndroid
-import com.example.convention.libs
+import com.example.convention.library
+import com.example.convention.version
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -15,19 +16,19 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
             extensions.configure<ApplicationExtension> {
                 defaultConfig {
-                    applicationId = libs.findVersion("applicationId").get().toString()
-                    targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
-                    versionCode = libs.findVersion("versionCode").get().toString().toInt()
-                    versionName = libs.findVersion("versionName").get().toString()
+                    applicationId = version("applicationId").toString()
+                    targetSdk = version("targetSdk").toString().toInt()
+                    versionCode = version("versionCode").toString().toInt()
+                    versionName = version("versionName").toString()
                 }
 
                 configureKotlinAndroid(this)
             }
             dependencies {
-                "testImplementation"(libs.findLibrary("junit.junit").get())
-                "androidTestImplementation"(libs.findLibrary("junit").get())
-                "androidTestImplementation"(libs.findLibrary("androidx.test.espresso.core").get())
-                "implementation"(libs.findLibrary("orhanobut.logger").get())
+                "testImplementation"(library("junit.junit"))
+                "androidTestImplementation"(library("junit"))
+                "androidTestImplementation"(library("androidx.test.espresso.core"))
+                "implementation"(library("orhanobut.logger"))
             }
 
         }

@@ -1,5 +1,5 @@
 import com.android.build.gradle.LibraryExtension
-import com.example.convention.libs
+import com.example.convention.library
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -23,12 +23,12 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", project(":designsystem"))
                 add("implementation", project(":domain"))
 
-                add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
-                add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
-                add("implementation", libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
-                add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
-                add("implementation", libs.findLibrary("orhanobut.logger").get())
-                add("implementation", libs.findLibrary("androidx.navigation.compose").get())
+                add("implementation", library("androidx.hilt.navigation.compose"))
+                add("implementation", library("androidx.lifecycle.runtimeCompose"))
+                add("implementation", library("androidx.lifecycle.viewModelCompose"))
+                add("implementation", library("kotlinx.coroutines.android"))
+                add("implementation", library("orhanobut.logger"))
+                add("implementation", library("androidx.navigation.compose"))
             }
         }
     }

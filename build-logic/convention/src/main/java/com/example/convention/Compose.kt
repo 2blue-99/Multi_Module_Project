@@ -10,16 +10,16 @@ internal fun Project.configureAndroidCompose(
 ) {
     commonExtension.apply {
         buildFeatures.compose = true
-        composeOptions.kotlinCompilerExtensionVersion = libs.findVersion("androidxComposeCompiler").get().toString()
+        composeOptions.kotlinCompilerExtensionVersion = version("androidxComposeCompiler").toString()
     }
 
     dependencies {
-        val bom = libs.findLibrary("androidx-compose-bom").get()
+        val bom = library("androidx-compose-bom")
         add("implementation", platform(bom))
         add("androidTestImplementation", platform(bom))
-        add("implementation", libs.findLibrary("androidx.compose.material3").get())
-        add("implementation", libs.findLibrary("androidx.compose.ui.util").get())
-        add("implementation", libs.findLibrary("androidx.compose.ui.tooling.preview").get())
-        add("debugImplementation", libs.findLibrary("androidx.compose.ui.testManifest").get())
+        add("implementation", library("androidx.compose.material3"))
+        add("implementation", library("androidx.compose.ui.util"))
+        add("implementation", library("androidx.compose.ui.tooling.preview"))
+        add("debugImplementation", library("androidx.compose.ui.testManifest"))
     }
 }

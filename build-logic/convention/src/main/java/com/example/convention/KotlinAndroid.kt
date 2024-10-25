@@ -11,8 +11,8 @@ internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
     commonExtension.apply {
-        compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
-        defaultConfig.minSdk = libs.findVersion("minSdk").get().toString().toInt()
+        compileSdk = version("compileSdk").toString().toInt()
+        defaultConfig.minSdk = version("minSdk").toString().toInt()
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_17
             targetCompatibility = JavaVersion.VERSION_17
@@ -21,7 +21,7 @@ internal fun Project.configureKotlinAndroid(
     configureKotlin()
 
     dependencies {
-        "coreLibraryDesugaring"(libs.findLibrary("desugar.jdk.libs").get())
+        "coreLibraryDesugaring"(library("desugar.jdk.libs").get())
     }
 }
 
