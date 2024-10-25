@@ -24,7 +24,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 "androidTestImplementation"(libs.findLibrary("junit").get())
                 "androidTestImplementation"(libs.findLibrary("androidx.test.espresso.core").get())
                 "implementation"(libs.findLibrary("orhanobut.logger").get())
-
             }
         }
     }

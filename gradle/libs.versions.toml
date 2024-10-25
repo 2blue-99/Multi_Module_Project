@@ -1,4 +1,8 @@
 [versions]
+
+compileSdk = "34"
+minSdk = "26"
+
 androidxActivity = "1.8.2"
 androidGradlePlugin = "8.5.0"
 logger = "2.2.0"

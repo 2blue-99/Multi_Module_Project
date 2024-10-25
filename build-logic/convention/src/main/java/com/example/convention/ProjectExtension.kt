@@ -11,4 +11,4 @@ import org.gradle.kotlin.dsl.getByType
 //    get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 val Project.libs
-    get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+    get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
