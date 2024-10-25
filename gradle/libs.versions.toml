@@ -1,57 +1,66 @@
 [versions]
 
+# Base Library Version
 compileSdk = "34"
 minSdk = "26"
-
-androidxActivity = "1.8.2"
 androidGradlePlugin = "8.5.0"
-logger = "2.2.0"
 org-jetbrains-kotlin-android = "1.8.10"
+
+# Android Library Version
+androidxActivity = "1.8.2"
 androidxLifecycle = "2.7.0"
 kotlinxCoroutines = "1.7.3"
 kotlin = "1.9.10"
-androidxAppCompat = "1.6.1"
 androidxCore = "1.12.0"
 androidTools = "31.2.2"
 androidxWork = "2.9.0"
 ksp = "1.9.10-1.0.13"
+com-google-android-material-material = "1.11.0"
+appcompat = "1.6.1"
 
-playServicesOssLicenses = "17.0.1"
-splashscreen = "1.1.0-rc01"
-secrets = "2.0.1"
-playStroeUpdate = "2.1.0"
-
-#compose
+# Compose Version
 androidxNavigation = "2.7.7"
 androidxComposeBom = "2024.02.00"
 composeMaterial3 = "1.2.0"
 androidxHiltNavigationCompose = "1.1.0"
 material = "1.10.0"
 androidxComposeCompiler = "1.5.3"
-#hilt
+
+#hilt Version
 hilt = "2.48.1"
 hiltExt = "1.1.0"
 
-#test
+# Test Version
 junit = "1.1.5"
+junit-junit = "4.13.2"
 androidxEspresso = "3.5.1"
-#room
-room = "2.6.1"
-#datastore
-androidxDataStore = "1.0.0"
-#serialization
-kotlinxSerializationJson = "1.6.0"
-#supabase
-supabase = "2.1.4"
 
+# Local DB Version
+room = "2.6.1"
+androidxDataStore = "1.0.0"
+
+# Network
+kotlinxSerializationJson = "1.6.0"
+
+# ETC Version
+logger = "2.2.0"
+playServicesOssLicenses = "17.0.1"
+splashscreen = "1.1.0-rc01"
+secrets = "2.0.1"
+playStroeUpdate = "2.1.0"
 ktor = "2.3.6"
 
-junit-junit = "4.13.2"
-appcompat = "1.6.1"
-com-google-android-material-material = "1.11.0"
 
 
 [libraries]
+
+# Base
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
+# Compose
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
@@ -82,51 +91,42 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 
-#room
-play-services-oss-licenses = { module = "com.google.android.gms:play-services-oss-licenses", version.ref = "playServicesOssLicenses" }
+# Local DB
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
-orhanobut-logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
-
-#workManager
-androidx-work-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidxWork" }
-
-#dataStore
 androidx-dataStore-core = { group = "androidx.datastore", name = "datastore", version.ref = "androidxDataStore" }
 androidx-dataStore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "androidxDataStore" }
 
-#serialization
+# Network
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 
-#supbase
-supabase-postgrest = { group = "io.github.jan-tennert.supabase", name = "postgrest-kt", version.ref = "supabase" }
-supabase-gotrue = { group = "io.github.jan-tennert.supabase", name = "gotrue-kt", version.ref = "supabase" }
-supabase-compose-auth = { group = "io.github.jan-tennert.supabase", name = "compose-auth", version.ref = "supabase" }
-supabase-compose-auth-ui = { group = "io.github.jan-tennert.supabase", name = "compose-auth-ui", version.ref = "supabase" }
+# WorkManager
+androidx-work-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidxWork" }
 
-ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
-
-
+# Test
 junit-junit = { group = "junit", name = "junit", version.ref = "junit-junit" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "com-google-android-material-material" }
 
+# ETC
+orhanobut-logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+play-services-oss-licenses = { module = "com.google.android.gms:play-services-oss-licenses", version.ref = "playServicesOssLicenses" }
 
-android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
-kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
-ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
 
 [plugins]
+
+# Base
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+# ETC
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-
-# Plugins defined by this project
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
 
 # Custom Plugin
