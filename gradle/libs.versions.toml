@@ -125,10 +125,10 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 # Plugins defined by this project
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
 
-hm-android-application = { id = "hm.android.application", version = "unspecified" }
-hm-android-application-compose = { id = "hm.android.application.compose", version = "unspecified" }
-
-hm-android-feature = { id = "hm.android.feature", version = "unspecified" }
-hm-android-hilt = { id = "hm.android.hilt", version = "unspecified" }
-hm-android-library = { id = "hm.android.library", version = "unspecified" }
-hm-android-library-compose = { id = "hm.android.library.compose", version = "unspecified" }
+# Custom Plugin
+my-android-application = { id = "my.android.application", version = "unspecified" }
+my-android-application-compose = { id = "my.android.application.compose", version = "unspecified" }
+my-android-feature = { id = "my.android.feature", version = "unspecified" }
+my-android-hilt = { id = "my.android.hilt", version = "unspecified" }
+my-android-library = { id = "my.android.library", version = "unspecified" }
+my-android-library-compose = { id = "my.android.library.compose", version = "unspecified" }

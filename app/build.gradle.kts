@@ -1,7 +1,7 @@
 plugins {
-    alias(libs.plugins.hm.android.application)
-    alias(libs.plugins.hm.android.hilt)
-    alias(libs.plugins.hm.android.application.compose)
+    alias(libs.plugins.my.android.application)
+    alias(libs.plugins.my.android.hilt)
+    alias(libs.plugins.my.android.application.compose)
     id("com.google.android.gms.oss-licenses-plugin")
 }
 

@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.hm.android.library)
-    alias(libs.plugins.hm.android.library.compose)
+    alias(libs.plugins.my.android.library)
+    alias(libs.plugins.my.android.library.compose)
 }
 
 android {

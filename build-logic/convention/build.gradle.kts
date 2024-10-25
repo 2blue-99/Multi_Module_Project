@@ -28,27 +28,27 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
-            id = "hm.android.application.compose"
+            id = "my.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
-            id = "hm.android.application"
+            id = "my.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "hm.android.library.compose"
+            id = "my.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "hm.android.library"
+            id = "my.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidFeature") {
-            id = "hm.android.feature"
+            id = "my.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
         register("androidHilt") {
-            id = "hm.android.hilt"
+            id = "my.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
     }

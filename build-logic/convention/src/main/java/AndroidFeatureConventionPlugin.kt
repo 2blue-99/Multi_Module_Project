@@ -9,8 +9,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target){
             pluginManager.apply{
-                apply("hm.android.library")
-                apply("hm.android.hilt")
+                apply("my.android.library")
+                apply("my.android.hilt")
             }
 
             extensions.configure<LibraryExtension>{
