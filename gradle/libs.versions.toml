@@ -1,16 +1,15 @@
 [versions]
 
-# Base Library Version
+# Android Version
 compileSdk = "34"
 minSdk = "26"
 androidGradlePlugin = "8.5.0"
-org-jetbrains-kotlin-android = "1.8.10"
+kotlin = "1.9.10"
 
 # Android Library Version
 androidxActivity = "1.8.2"
 androidxLifecycle = "2.7.0"
 kotlinxCoroutines = "1.7.3"
-kotlin = "1.9.10"
 androidxCore = "1.12.0"
 androidTools = "31.2.2"
 androidxWork = "2.9.0"
@@ -122,12 +121,12 @@ play-services-oss-licenses = { module = "com.google.android.gms:play-services-os
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 # ETC
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }
 
 # Custom Plugin
 my-android-application = { id = "my.android.application", version = "unspecified" }

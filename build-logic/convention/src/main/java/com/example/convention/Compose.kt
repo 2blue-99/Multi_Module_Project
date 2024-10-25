@@ -20,8 +20,6 @@ internal fun Project.configureAndroidCompose(
         add("implementation", libs.findLibrary("androidx.compose.material3").get())
         add("implementation", libs.findLibrary("androidx.compose.ui.util").get())
         add("implementation", libs.findLibrary("androidx.compose.ui.tooling.preview").get())
-
-        // Add ComponentActivity to debug manifest
         add("debugImplementation", libs.findLibrary("androidx.compose.ui.testManifest").get())
     }
 }
