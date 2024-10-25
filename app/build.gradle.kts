@@ -9,9 +9,6 @@ android {
     namespace = "com.example.multi_module_practice"
 
     defaultConfig {
-        applicationId = "com.example.multi_module_practice"
-        versionCode = 1
-        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true

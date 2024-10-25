@@ -13,10 +13,15 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
             }
-
             extensions.configure<ApplicationExtension> {
+                defaultConfig {
+                    applicationId = libs.findVersion("applicationId").get().toString()
+                    targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
+                    versionCode = libs.findVersion("versionCode").get().toString().toInt()
+                    versionName = libs.findVersion("versionName").get().toString()
+                }
+
                 configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 34
             }
             dependencies {
                 "testImplementation"(libs.findLibrary("junit.junit").get())

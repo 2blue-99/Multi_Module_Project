@@ -1,8 +1,12 @@
 [versions]
 
-# Android Version
+# Android
+applicationId = "com.example.multi_module_practice"
+versionName = "1.0.0"
+versionCode = "1"
 compileSdk = "34"
-minSdk = "26"
+targetSdk = "34"
+minSdk = "24"
 androidGradlePlugin = "8.5.0"
 kotlin = "1.9.10"
 
@@ -48,6 +52,7 @@ splashscreen = "1.1.0-rc01"
 secrets = "2.0.1"
 playStroeUpdate = "2.1.0"
 ktor = "2.3.6"
+desugar_jdk_libs = "2.0.4"
 
 
 
@@ -112,6 +117,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 orhanobut-logger = { group = "com.orhanobut", name = "logger", version.ref = "logger" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
 play-services-oss-licenses = { module = "com.google.android.gms:play-services-oss-licenses", version.ref = "playServicesOssLicenses" }
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 
 
 

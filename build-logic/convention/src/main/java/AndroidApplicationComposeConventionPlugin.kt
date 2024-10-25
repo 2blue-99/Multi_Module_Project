@@ -14,4 +14,3 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
         }
     }
 }
-
