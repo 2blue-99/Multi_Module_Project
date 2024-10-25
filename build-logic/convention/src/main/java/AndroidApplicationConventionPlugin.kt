@@ -11,8 +11,8 @@ import org.gradle.kotlin.dsl.dependencies
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
-        with(target) {
-            with(pluginManager) {
+        target.run {
+            pluginManager.run {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
             }
