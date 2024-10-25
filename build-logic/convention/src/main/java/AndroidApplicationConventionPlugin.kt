@@ -1,4 +1,6 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.example.convention.ExtensionType
+import com.example.convention.configureBuildTypes
 import com.example.convention.configureKotlinAndroid
 import com.example.convention.library
 import com.example.convention.version
@@ -23,6 +25,11 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 }
 
                 configureKotlinAndroid(this)
+
+                configureBuildTypes(
+                    commonExtension = this,
+                    extensionType = ExtensionType.APPLICATION
+                )
             }
             dependencies {
                 "testImplementation"(library("junit.junit"))
@@ -30,7 +37,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 "androidTestImplementation"(library("androidx.test.espresso.core"))
                 "implementation"(library("orhanobut.logger"))
             }
-
         }
     }
 }
