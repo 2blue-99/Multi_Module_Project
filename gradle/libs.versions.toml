@@ -1,6 +1,6 @@
 [versions]
 androidxActivity = "1.8.2"
-androidGradlePlugin = "8.2.2"
+androidGradlePlugin = "8.5.0"
 logger = "2.2.0"
 org-jetbrains-kotlin-android = "1.8.10"
 androidxLifecycle = "2.7.0"

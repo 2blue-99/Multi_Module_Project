@@ -6,15 +6,13 @@ import org.gradle.kotlin.dsl.dependencies
 
 
 internal fun Project.configureAndroidCompose(
-    commonExtension: CommonExtension<*,*,*,*,*>,
-){
+    commonExtension: CommonExtension<*,*,*,*,*,*>,
+) {
     commonExtension.apply {
-        buildFeatures {
-            compose = true
-        }
-        composeOptions {
-            kotlinCompilerExtensionVersion = libs.findVersion("androidxComposeCompiler").get().toString()
-        }
+        buildFeatures.compose = true
+
+        composeOptions.kotlinCompilerExtensionVersion = libs.findVersion("androidxComposeCompiler").get().toString()
+
         dependencies {
             val bom = libs.findLibrary("androidx-compose-bom").get()
             add("implementation", platform(bom))
