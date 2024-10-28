@@ -24,17 +24,13 @@ internal fun Project.configureBuildTypes(
                 extensions.configure<ApplicationExtension> {
                     buildTypes {
                         debug {
-                            isShrinkResources = false // 리소스 축소
-                            isMinifyEnabled = false // 코드 축소
+
                             configureDebugBuildType(
                                 apiKey = debugKey
                             )
                         }
                         release {
-                            isShrinkResources = true // 리소스 축소
-                            isMinifyEnabled = true // 코드 축소
                             configureReleaseBuildType(
-                                commonExtension = commonExtension,
                                 apiKey = releaseKey
                             )
                         }
@@ -52,7 +48,6 @@ internal fun Project.configureBuildTypes(
                         }
                         release {
                             configureReleaseBuildType(
-                                commonExtension = commonExtension,
                                 apiKey = releaseKey
                             )
                         }
@@ -64,18 +59,11 @@ internal fun Project.configureBuildTypes(
 }
 
 private fun BuildType.configureDebugBuildType(apiKey: String) {
-
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
 }
 
 private fun BuildType.configureReleaseBuildType(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
     apiKey: String
 ) {
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
-
-    proguardFiles(
-        commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
-        "proguard-rules.pro"
-    )
 }

@@ -25,6 +25,10 @@ android {
             applicationIdSuffix = ".debug"
         }
         release {
+            isMinifyEnabled = true // 코드 축소, 프로가드 활성화
+            isShrinkResources = true // 리소스 축소
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+
             signingConfig = signingConfigs.getByName("debug")
         }
     }
