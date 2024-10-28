@@ -17,9 +17,10 @@ internal fun Project.configureAndroidCompose(
         val bom = library("androidx-compose-bom")
         add("implementation", platform(bom))
         add("androidTestImplementation", platform(bom))
+        add("implementation", library("androidx.compose.ui.tooling.preview"))
+
+        add("debugImplementation", library("androidx.compose.ui.testManifest"))
         add("implementation", library("androidx.compose.material3"))
         add("implementation", library("androidx.compose.ui.util"))
-        add("implementation", library("androidx.compose.ui.tooling.preview"))
-        add("debugImplementation", library("androidx.compose.ui.testManifest"))
     }
 }

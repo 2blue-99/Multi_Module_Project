@@ -9,6 +9,9 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 
+/**
+ * 앱 모듈에서 사용하는 베이스 플로그인
+ */
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         target.run {
