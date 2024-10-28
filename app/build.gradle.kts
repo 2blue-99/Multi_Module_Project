@@ -19,18 +19,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-
-
-
     buildTypes {
         debug {
-            isMinifyEnabled = false
-            isDebuggable = true
             applicationIdSuffix = ".debug"
         }
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
             signingConfig = signingConfigs.getByName("debug")
         }
     }

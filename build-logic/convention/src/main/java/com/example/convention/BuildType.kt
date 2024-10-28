@@ -59,8 +59,9 @@ internal fun Project.configureBuildTypes(
 }
 
 private fun BuildType.configureDebugBuildType(apiKey: String) {
+    isShrinkResources = false // 리소스 축소
+    isMinifyEnabled = false // 코드 축소
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
-//    buildConfigField("String", "BASE_URL", "\"DEBUG_API_URL\"")
 }
 
 private fun BuildType.configureReleaseBuildType(
@@ -68,7 +69,8 @@ private fun BuildType.configureReleaseBuildType(
     apiKey: String
 ) {
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
-//    buildConfigField("String", "BASE_URL", "\"RELEASE_API_URL\"")
+    isShrinkResources = true // 리소스 축소
+    isMinifyEnabled = true // 코드 축소
     proguardFiles(
         commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
         "proguard-rules.pro"
