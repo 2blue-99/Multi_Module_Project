@@ -1,5 +1,6 @@
 import com.android.build.gradle.LibraryExtension
 import com.example.convention.library
+import com.example.convention.version
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -17,6 +18,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             extensions.configure<LibraryExtension>{
+                compileSdk = version("compileSdk").toString().toInt()
                 defaultConfig{
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
